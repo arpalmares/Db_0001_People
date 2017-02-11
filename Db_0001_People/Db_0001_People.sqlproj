@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{5e4eedb3-5f84-4ed7-985b-d22a452047e7}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -57,5 +57,17 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="Views" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Persons.sql" />
+    <Build Include="Tables\Relationships.sql" />
+    <Build Include="Tables\Genders.sql" />
+    <Build Include="Views\vw_AllMalePersons.sql" />
+    <Build Include="Views\vw_AllFemalePersons.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Db_0001_People.Local.publish.xml" />
   </ItemGroup>
 </Project>
